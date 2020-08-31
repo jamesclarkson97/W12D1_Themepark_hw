@@ -60,4 +60,11 @@ public class ThemeParkTest {
     public void hasReviewedItems() {
         assertEquals(7, themePark.getAllReviewed().size());
     }
+
+    @Test
+    public void canVisitAttraction() {
+        themePark.visit(visitor, rollerCoaster);
+        assertEquals(1, rollerCoaster.getVisitCount());
+        assertEquals(1, visitor.getVisitedAttractions().size());
+    }
 }
